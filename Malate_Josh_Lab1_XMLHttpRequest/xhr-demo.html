@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INTPROG Lab 2</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+    #output {
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #4b4bf9;
+      color: white;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #c93434;
+    }
+  </style>
+</head>
+<body>
+  <h2>Lab Excersise 2</h2>
+  <button id="loadData">Load Data</button>
+  <div id="output"></div>
+
+  <script>
+    document.getElementById("loadData").addEventListener("click", function () {
+      const xhr = new XMLHttpRequest();
+      const output = document.getElementById("output");
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) { 
+          if (xhr.status === 200) { 
+            const data = JSON.parse(xhr.responseText);
+            output.innerHTML = `
+              <strong>Post Title:</strong> ${data.title}<br><br>
+              <strong>Content:</strong> ${data.body}
+            `;
+          } else {
+            output.innerHTML = `<span style="color:red;">Error: ${xhr.status} - ${xhr.statusText}</span>`;
+          }
+        }
+      };
+
+      xhr.open("GET", "https://jsonplaceholder.typicode.com/posts/1", true);
+      xhr.send();
+    });
+  </script>
+</body>
+</html>
