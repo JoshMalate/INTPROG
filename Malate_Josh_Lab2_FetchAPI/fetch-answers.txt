@@ -1,0 +1,8 @@
+1. What are the differences between XMLHttpRequest and Fetch API?
+XMLHttpRequest uses callbacks which is older and more complicated and fetch API uses promises which is newer and more polished.
+2. Why is the Fetch API considered more modern and readable?
+Because the fetch API is more polished and easier to understand.
+3. What is the purpose of the .then() and .catch() methods in Fetch?
+ the purpose of .then() is to handles the correct response and lets you use the data, while .catch() catches the error if something is wrong.
+4. What happens when you send a POST request to the placeholder API?
+it returns a fake response with a new post ID but doesnt save the data.
