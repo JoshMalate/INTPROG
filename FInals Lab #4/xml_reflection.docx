@@ -1,0 +1,11 @@
+1. Basic rules of XML you used
+all of the content is inside one root only 
+all of the elements is nested properly, no overlapping.
+all of the elements and atributes all have consistent casing
+2. Why XML needs a single root element
+To make sure the file is organized and has a clear hierarchical structure. so that the parsers can read and understand it properly.
+3. How XML ensures interoperability
+XML enfoced strict rules which ensures interoperability between different systems. It can also be read and edited in any systems.
+
+In this activity I learned how strict the XML rules are making a small mistake like having mismatched casing can cause errors. During the validation on
+xmlvalidation.com the error message pointed out the line and column of the error which helped me to fix it. this has help me to see how important it is to have strict rules to reinforce data integrity across systems.
